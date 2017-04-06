@@ -1,9 +1,11 @@
 //
 //  TestData.swift
-//  APIConnection
+//  APIConnectionExample
 //
-//  Created by Digices LLC on 4/5/17.
+//  Version 0.0.1
+//  Created by Roderic Linguri on 4/6/2017.
 //  Copyright © 2017 Digices LLC. All rights reserved.
+//  License: MIT. Modification permitted. This header must remain intact.
 //
 
 import Foundation
@@ -46,6 +48,7 @@ class TestData : NSObject, NSCoding {
     }
 
     let n = aDecoder.decodeObject(forKey: "name") as! String
+    // NOTE: if name is actually 'nil', this will cause problems
     if n != "nil" {
       self.name = n
     }
@@ -75,6 +78,8 @@ class TestData : NSObject, NSCoding {
 
   func encode(with aCoder: NSCoder) {
 
+    // conditionally store optional properties with recognizably invalid values
+
     if let i = self.id {
       aCoder.encode(i, forKey: "id")
     } else {
@@ -84,6 +89,7 @@ class TestData : NSObject, NSCoding {
     if let n = self.name {
       aCoder.encode(n, forKey: "name")
     } else {
+      // NOTE: if name is actually 'nil', this will cause problems
       aCoder.encode("nil", forKey: "name")
     }
 
@@ -110,7 +116,5 @@ class TestData : NSObject, NSCoding {
     aCoder.encode(self.authenticated, forKey: "authenticated")
 
   } // ./encode
-
-
 
 }
