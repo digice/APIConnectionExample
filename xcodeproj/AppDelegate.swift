@@ -1,9 +1,11 @@
 //
 //  AppDelegate.swift
-//  APIConnection
+//  APIConnectionExample
 //
-//  Created by Digices LLC on 4/5/17.
+//  Version 0.0.1
+//  Created by Roderic Linguri on 4/6/2017.
 //  Copyright © 2017 Digices LLC. All rights reserved.
+//  License: MIT. Modification permitted. This header must remain intact.
 //
 
 import UIKit
@@ -13,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  let appDataManager : AppDataManager = AppDataManager()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
