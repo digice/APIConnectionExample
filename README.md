@@ -1,11 +1,7 @@
 # APIConnectionExample
-__An example of connecting an app to an API__
+_An example of connecting an iOS app to an API_
 
-A basic login screen with data that is stored on the device and synchronized with a server
- 
-- Lists albums and built-in collections (Recently Added, Favorites, etc)
-- Displays assets (all photos or those from a collection) in a thumbnail grid
-- Displays a single photo, video, or Live Photo asset
+- A basic login screen with data that is stored on the device and synchronized with a server
 - Allows the following actions:
     * create a user account with API
     * authenticate to API
