@@ -1,9 +1,11 @@
 //
 //  ViewController.swift
-//  APIConnection
+//  APIConnectionExample
 //
-//  Created by Digices LLC on 4/5/17.
+//  Version 0.0.1
+//  Created by Roderic Linguri on 4/6/2017.
 //  Copyright © 2017 Digices LLC. All rights reserved.
+//  License: MIT. Modification permitted. This header must remain intact.
 //
 
 import UIKit
@@ -36,8 +38,7 @@ class ViewController: UIViewController, TestDataManagerDelegate {
 
   let manager : TestDataManager = TestDataManager()
 
-
-  // MARK: - UIViewController Methods
+  // MARK: - UIViewController Overrides
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -54,7 +55,7 @@ class ViewController: UIViewController, TestDataManagerDelegate {
 
   func testDataManagerDidUpdateData() {
     self.updateViewFromData()
-  }
+  } // ./testDataManagerDidUpdateData
 
   // MARK: - ViewController (self) Methods
 
@@ -95,7 +96,7 @@ class ViewController: UIViewController, TestDataManagerDelegate {
 
     self.messageLabel.text = self.manager.message
 
-  }
+  } // ./updateViewFromData
 
   func updateDataFromView() {
 
@@ -121,12 +122,12 @@ class ViewController: UIViewController, TestDataManagerDelegate {
 
     self.manager.save()
 
-  }
+  } // ./updateDataFromView
 
   func dismissKeyboard()
   {
     self.view.endEditing(true)
-  }
+  } // ./dismissKeyboard
 
   // MARK: - Actions
 
@@ -156,7 +157,7 @@ class ViewController: UIViewController, TestDataManagerDelegate {
       self.sendRequestButton.setTitle("Log Out", for: .normal)
     }
 
-  }
+  } // ./didChangeType
 
   @IBAction func sendRequest(_ sender: Any) {
 
@@ -173,7 +174,6 @@ class ViewController: UIViewController, TestDataManagerDelegate {
       self.manager.logOut()
     }
 
-  }
+  } // ./sendRequest
 
 }
-
