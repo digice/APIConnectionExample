@@ -30,7 +30,7 @@ class ConnectionManager {
 
   // MARK: - Properties
 
-  var request : URLRequest = URLRequest(url: URL(string: "https://www.digices.com/connection/index.php")!)
+  var request : URLRequest = URLRequest(url: URL(string: "https://<#api-bootstrapper-url#>")!)
 
   var state : ConnectionState = .urlSet
 
@@ -151,7 +151,6 @@ class ConnectionManager {
       } // ./added operation to main queue
 
     } // ./delegate is set
-
 
   } // ./completionHandler
 
