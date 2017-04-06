@@ -1,9 +1,11 @@
 //
 //  TestDataManager.swift
-//  APIConnection
+//  APIConnectionExample
 //
-//  Created by Digices LLC on 4/5/17.
+//  Version 0.0.1
+//  Created by Roderic Linguri on 4/6/2017.
 //  Copyright © 2017 Digices LLC. All rights reserved.
+//  License: MIT. Modification permitted. This header must remain intact.
 //
 
 import Foundation
@@ -29,10 +31,12 @@ class TestDataManager : ConnectionManagerDelegate {
 
   init() {
     self.manager.delegate = self
-  }
+  } // ./init
 
   func sendCreateRequest() {
 
+    // api expects: 'm=test&a=create&n=MyUsername&p=MyMassword&e=me@mydomain.com'
+    
     var body = "m=test&a=create"
 
     if let n = self.data.name {
@@ -51,10 +55,12 @@ class TestDataManager : ConnectionManagerDelegate {
 
     self.manager.sendRequest()
 
-  }
+  } // ./sendCreateRequest
 
   func sendLoginRequest() {
 
+    // api expects: 'm=test&a=authenticate&n=MyUsername&p=MyMassword'
+    
     var body = "m=test&a=authenticate"
 
     if let n = self.data.name {
@@ -69,7 +75,7 @@ class TestDataManager : ConnectionManagerDelegate {
 
     self.manager.sendRequest()
 
-  }
+  } // ./sendLoginRequest
 
   func sendUpdateRequest() {
 
@@ -95,7 +101,7 @@ class TestDataManager : ConnectionManagerDelegate {
 
     self.manager.sendRequest()
 
-  }
+  } // ./sendUpdateRequest
 
   func logOut() {
 
@@ -123,11 +129,11 @@ class TestDataManager : ConnectionManagerDelegate {
 
     self.save()
 
-  }
+  } // ./logOut
 
   func save() {
     AppDataManager.shared.save()
-  }
+  } // ./save
 
   // MARK: - ConnectionManagerDelegate Methods
 
@@ -176,6 +182,6 @@ class TestDataManager : ConnectionManagerDelegate {
       d.testDataManagerDidUpdateData()
     } // ./delegate is set
 
-  }
+  } // ./connectionManagerDidReceiveResponse
 
 }
