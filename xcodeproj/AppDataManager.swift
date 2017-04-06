@@ -1,9 +1,11 @@
 //
 //  AppManager.swift
-//  BeaconSpike
+//  APIConnectionExample
 //
-//  Created by Digices LLC on 4/1/17.
+//  Version 0.0.1
+//  Created by Roderic Linguri on 4/6/2017.
 //  Copyright © 2017 Digices LLC. All rights reserved.
+//  License: MIT. Modification permitted. This header must remain intact.
 //
 
 import Foundation
