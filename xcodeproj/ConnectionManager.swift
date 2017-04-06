@@ -1,9 +1,11 @@
 //
 //  ConnectionManager.swift
-//  APIConnection
+//  APIConnectionExample
 //
-//  Created by Digices LLC on 4/5/17.
+//  Version 0.0.1
+//  Created by Roderic Linguri on 4/6/2017.
 //  Copyright © 2017 Digices LLC. All rights reserved.
+//  License: MIT. Modification permitted. This header must remain intact.
 //
 
 import UIKit
@@ -54,7 +56,7 @@ class ConnectionManager {
     self.request.httpBody = httpBody.data(using: .utf8)
     self.state = .httpBodySet
 
-  }
+  } // ./setRequest
 
   func parseResponse(data: Data) -> Bool {
 
@@ -68,7 +70,7 @@ class ConnectionManager {
       return false
     }
 
-  }
+  } // ./parseResponse
 
   func completionHandler(data: Data?, response: URLResponse?, error: Error?) {
 
@@ -160,6 +162,6 @@ class ConnectionManager {
     let task = session.dataTask(with: self.request, completionHandler: self.completionHandler)
     task.resume()
     self.state = .requestSent
-  }
+  } // ./sendRequest
 
 }
